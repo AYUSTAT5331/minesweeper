@@ -7,6 +7,12 @@ A modern, feature-rich Minesweeper game built with React, TypeScript, and Vite. 
 ![Vite](https://img.shields.io/badge/Vite-7+-646CFF?logo=vite&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-Tested-6E9F18?logo=vitest&logoColor=white)
 
+## 🎮 Live Demo
+
+**Play now:** [https://minesweeper-puce-nine.vercel.app](https://minesweeper-puce-nine.vercel.app)
+
+Deployed on Vercel with automatic CI/CD from GitHub.
+
 ## ✨ Features
 
 ### Core Gameplay
