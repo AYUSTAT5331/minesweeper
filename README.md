@@ -65,6 +65,24 @@ The app will be available at `http://localhost:5173/`
 
 ## 📜 Available Scripts
 
+### Using Makefile (Recommended)
+
+This project includes a Makefile for simplified command execution:
+
+```bash
+make help            # Show all available commands
+make setup           # Initial project setup
+make dev             # Start development server
+make test            # Run tests
+make build           # Build for production
+make lint            # Run linting
+make deploy-prod     # Deploy to production
+```
+
+📖 **Full documentation:** See [MAKEFILE.md](MAKEFILE.md) for detailed usage guide.
+
+### Using npm Scripts
+
 ```bash
 npm run dev          # Start development server
 npm run build        # Build for production
