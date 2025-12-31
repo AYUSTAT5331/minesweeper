@@ -1,0 +1,130 @@
+.cell {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-cell-border);
+  background-color: var(--color-cell-closed);
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  user-select: none;
+  position: relative;
+}
+
+/* 3D Effect for Closed Cells */
+.cell.closed {
+  background: linear-gradient(135deg, #e0e0e0 0%, var(--color-cell-closed) 50%, #a0a0a0 100%);
+  border-top: 2px solid var(--color-cell-border-light);
+  border-left: 2px solid var(--color-cell-border-light);
+  border-right: 2px solid var(--color-cell-border-dark);
+  border-bottom: 2px solid var(--color-cell-border-dark);
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.5),
+              inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cell.closed:hover {
+  background: linear-gradient(135deg, #f0f0f0 0%, #d0d0d0 50%, #b0b0b0 100%);
+  transform: scale(1.05);
+  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.6),
+              inset -1px -1px 3px rgba(0, 0, 0, 0.3),
+              0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cell.closed:active {
+  transform: scale(0.98);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cell.opened {
+  background-color: var(--color-cell-opened);
+  border: 1px solid var(--color-gray-300);
+  cursor: default;
+  box-shadow: var(--shadow-inset);
+}
+
+.cell.flagged {
+  background: linear-gradient(135deg, #fff9e6 0%, var(--color-cell-flagged) 50%, #fde68a 100%);
+  border-top: 2px solid var(--color-cell-border-light);
+  border-left: 2px solid var(--color-cell-border-light);
+  border-right: 2px solid var(--color-cell-border-dark);
+  border-bottom: 2px solid var(--color-cell-border-dark);
+  animation: flagPlaced 0.2s ease-out;
+}
+
+.cell.flagged:hover {
+  background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 50%, #fcd34d 100%);
+  transform: scale(1.05);
+}
+
+@keyframes flagPlaced {
+  0% {
+    transform: scale(0.8) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.cell.mine {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  animation: mineExplode 0.3s ease-out;
+}
+
+@keyframes mineExplode {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: #dc2626;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Number Colors */
+.number-1 {
+  color: var(--color-number-1);
+}
+
+.number-2 {
+  color: var(--color-number-2);
+}
+
+.number-3 {
+  color: var(--color-number-3);
+}
+
+.number-4 {
+  color: var(--color-number-4);
+}
+
+.number-5 {
+  color: var(--color-number-5);
+}
+
+.number-6 {
+  color: var(--color-number-6);
+}
+
+.number-7 {
+  color: var(--color-number-7);
+}
+
+.number-8 {
+  color: var(--color-number-8);
+}
+
+/* Accessibility */
+.cell:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  z-index: 1;
+}
